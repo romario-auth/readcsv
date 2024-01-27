@@ -6,3 +6,5 @@ services:
     build:
       context: .
       dockerfile: ReadCvs.Api/Dockerfile
+    ports:
+      - "8004:80"
