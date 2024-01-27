@@ -21,5 +21,12 @@ namespace ReadCsv.Api.Controllers
             List<EmployeeDto> listEmployee = _employeeServiceApplication.ReadCsv(file);
             return listEmployee;
         }
+
+        [HttpGet]
+        [Route("ping")]
+        public IActionResult TestEndPoint()
+        {
+            return Ok (new { message = "Ok" });
+        }
     }
 }
