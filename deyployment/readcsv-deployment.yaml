@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readcsv-api
+  labels:
+    app: readcsv
+    type: backend
+
+spec:
+  template:
+    metadata:
+      name: readcsv-api
+      labels:
+        env: production
+        app: readcsv-api
+    spec:
+      containers:
+      - name: readcsv-api
+        image: readcsvapi
+        ports:
+         - containerPort: 80        
+        imagePullPolicy: Never
+  
+  selector:
+    matchLabels:
+      env: production
+      app: readcsv-api
+  
+  replicas: 1

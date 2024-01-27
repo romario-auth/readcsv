@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: readcsv-clusterip-service
+
+spec:
+  type: ClusterIP
+  selector:
+    app: readcsv-api
+  ports:
+   - name: readcsv-clusterip-service
+     port: 80
